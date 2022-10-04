@@ -1,0 +1,28 @@
+#include <stdio.h>
+int main(){
+	int num = 100000;
+	int d,p = 0;
+	int a[num];
+	int i,x,t;
+	for(i = 0;i<num;i++){
+		a[i]=1;
+	}
+	i = 1;
+	for(x=2;x<num;x++){
+		if(a[x]){
+			for(i=2;i*x<num;i++){
+			a[x*i]=0;
+			}
+		}
+	}
+	for(t=0;t<num;t++){
+		if(a[t]){
+			printf("%d\t",t);
+			d++;
+			if(d%10 == 0){
+			printf("\n");
+			}
+		}
+	}
+    return 0;
+}
